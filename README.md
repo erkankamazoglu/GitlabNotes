@@ -48,6 +48,9 @@ echo -e '\nexport GITLAB_HOME=/srv/gitlab' | sudo tee -a ~/.bashrc
 
 ```bash 
 docker network create gitlab
+
+# Network check
+docker network list
 ```
 
 ### 5. Gitlab Customized Docker Compose File Download
@@ -59,14 +62,20 @@ cd $GITLAB_HOME
 # Download Docker Compose file
 curl -o docker-compose-gitlab.yml https://raw.githubusercontent.com/erkankamazoglu/GitlabNotes/main/docker-compose-gitlab.yml
 
+# See yaml file details
+cat docker-compose-gitlab.yml
+
 # Make your own customizations after downloading the file
 sudo nano docker-compose-gitlab.yml
-```
+``` 
+
+> [!IMPORTANT]
+> If you do not set a strong password for GITLAB_ROOT_PASSWORD, the root user will not be created. 
 
 ### 6. Docker Compose Up
 
 ```bash 
-docker-compose -f docker-compose-gitlab.yml up -d 
+docker compose -f docker-compose-gitlab.yml up -d 
 ```
 
 ***
