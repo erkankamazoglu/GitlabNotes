@@ -11,6 +11,9 @@ Install Gitlab-EE with Docker
 ```bash
 sudo su -
 curl https://raw.githubusercontent.com/erkankamazoglu/GitlabNotes/main/docker-install.sh | bash
+
+# Version check
+docker version
 ```
 
 ### 2. Docker Compose Installation 
@@ -18,6 +21,9 @@ curl https://raw.githubusercontent.com/erkankamazoglu/GitlabNotes/main/docker-in
 ```bash
 sudo apt-get update
 sudo apt-get install docker-compose-plugin
+
+# Version check
+docker compose version
 ```
 
 ### 3. Set Up Volumes Location
