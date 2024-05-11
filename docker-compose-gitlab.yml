@@ -3,14 +3,14 @@ services:
   gitlab:
     image: gitlab/gitlab-ee:16.11.1-ee.0
     restart: always
-    hostname: gitlab.solvera.com.tr
+    hostname: gitlab.example.com
     container_name: gitlab-ee
     environment:
       GITLAB_ROOT_PASSWORD: "changeMeToSomethingGood"
       GITLAB_OMNIBUS_CONFIG: |
-        external_url 'https://gitlab.solvera.com.tr'
-        letsencrypt['contact_emails'] = ['erkan.kamazoglu@solvera.com.tr']
-        registry_external_url 'https://gitlab.solvera.com.tr:5010'
+        external_url 'https://gitlab.example.com'
+        letsencrypt['contact_emails'] = ['info@example.com']
+        registry_external_url 'https://gitlab.example.com:5010'
         registry['enable'] = true
         nginx['redirect_http_to_https'] = true 
         nginx['ssl_protocols'] = "TLSv1.2 TLSv1.3" 
@@ -21,12 +21,12 @@ services:
         gitlab_rails['gitlab_shell_ssh_port'] = 2222
         gitlab_rails['backup_keep_time'] = 259200 
         gitlab_rails['smtp_enable'] = true 
-        gitlab_rails['smtp_user_name'] = "no-reply@solvera.com.tr"
-        gitlab_rails['gitlab_email_from'] = 'no-reply@solvera.com.tr'
-        gitlab_rails['gitlab_email_reply_to'] = 'no-reply@solvera.com.tr'
+        gitlab_rails['smtp_user_name'] = "no-reply@example.com"
+        gitlab_rails['gitlab_email_from'] = 'no-reply@example.com'
+        gitlab_rails['gitlab_email_reply_to'] = 'no-reply@example.com'
         gitlab_rails['gitlab_email_display_name'] = 'GitLab Solvera'
         gitlab_rails['smtp_address'] = "smtp-mail.outlook.com"
-        gitlab_rails['smtp_domain'] = "solvera.com.tr"
+        gitlab_rails['smtp_domain'] = "example.com"
         gitlab_rails['smtp_port'] = 587
         gitlab_rails['smtp_password'] = "changeMeToSomethingGood"        
         gitlab_rails['smtp_authentication'] = "login"
