@@ -92,7 +92,7 @@ watch docker ps
 # If the container gets an error while starting up 
 # or an error occurs while the application is running, 
 # it can be viewed here.
-docker logs -f container_id
+docker logs -f <container_id>
 ```
 
 ***
@@ -101,7 +101,7 @@ docker logs -f container_id
 
 ```bash 
 # Refreshing the configuration when a change is made in Gitlab settings.
-docker exec -it container_id bash
+docker exec -it <container_id> bash
     gitlab-ctl reconfigure
 ```
 
@@ -109,7 +109,7 @@ docker exec -it container_id bash
 
 ## User Reset Password
 ```bash 
-docker exec -it container_id bash
+docker exec -it <container_id> bash
     gitlab-rake "gitlab:password:reset"
 
 sudo systemctl restart docker
